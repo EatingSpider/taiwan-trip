@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>台湾 4日旅程（台中・台北）2025/10/21–24</title>
+<meta name="description" content="2025年10月21日〜24日の台湾（台中・台北）4日間の旅行スケジュール。HSR、MRT、観光スポット、ホテル情報を網羅。" />
+
+<style>
+/* ===== 全域（中文備註） ===== */
+:root {
+  --brand: #00695c;
+  --accent: #d81b60;
+  --bg: #fafafa;
+  --text: #333;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', 'Yu Gothic', 'Helvetica Neue', Arial, sans-serif;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+html { scroll-behavior: smooth; }
+
+/* ===== HERO：確保手機首屏就能看到整條導覽 ===== */
+.hero {
+  position: relative;
+  height: 60vh; /* 手機提高高度，導覽一定露出 */
+  min-height: 360px;
+  padding-bottom: 88px; /* 為導覽留出底部空間 */
+  overflow: hidden;
+}
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(60%) grayscale(10%);
+}
+.hero h1 {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0 1rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.25;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, .6)
+}
+.hero .trip {
+  display: block;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 6.5vw, 4rem);
+  white-space: nowrap;
+}
+.hero .date {
+  display: block;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 3.2vw, 1.8rem);
+  opacity: .95;
+}
+
+/* ===== HERO 導覽（可換行、不水平捲動） ===== */
+.hero-nav {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  width: calc(100% - 24px); /* 兩側留白避免出框 */
+  max-width: 980px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.hero-nav a {
+  color: #fff;
+  font-weight: 700;
+  display: inline-block;
+  font-size: clamp(.75rem, 3vw, 1rem);
+  padding: .46rem .88rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, .55);
+  background: rgba(0, 0, 0, .22);
+  backdrop-filter: blur(4px)
+}
+.hero-nav a:hover { background: rgba(255, 255, 255, .28); }
+
+/* ===== 語言切換（固定右上，不遮內容） ===== */
+.lang-switch {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, .45);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-weight: 700;
+  font-size: .9rem
+}
+.lang-switch .goog-te-gadget { color: #fff; }
+.lang-switch .goog-te-gadget span { display: none; }
+.lang-switch .goog-te-combo {
+  background: rgba(255, 255, 255, .15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .6);
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 700
+}
+.lang-switch .goog-te-combo option { color: #000; }
+
+/* ===== 容器與卡片（桌機維持不變） ===== */
+.container {
+  max-width: 980px;
+  margin: auto;
+  padding: 20px;
+}
+.day-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+  margin-bottom: 38px;
+  overflow: hidden;
+}
+.day-card .banner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+@media (max-width: 740px) {
+  .day-card .banner img { height: 220px; }
+}
+.day-card h2 {
+  margin: 0;
+  padding: 14px 18px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 1.2rem;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* ===== 表格：桌機固定欄寬 ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.day-card table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+}
+.day-card th, .day-card td {
+  padding: 10px 8px;
+  text-align: left;
+  vertical-align: top;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.day-card th {
+  background: #f0f0f0;
+  white-space: nowrap;
+}
+.day-card tr:nth-child(even) { background: #f9f9f9; }
+@media (min-width: 741px) {
+  .day-card table { table-layout: fixed; }
+  .day-card th:nth-child(1), .day-card td:nth-child(1) { width: 120px; }
+  .day-card th:nth-child(2), .day-card td:nth-child(2) { width: 44%; }
+  .day-card th:nth-child(3), .day-card td:nth-child(3) { width: 22%; }
+  .day-card th:nth-child(4), .day-card td:nth-child(4) { width: 22%; }
+}
+
+/* ===== 手機表格：改為「左側標籤絕對定位 + 內容區左內距」避免跑進小標題 ===== */
+@media (max-width: 740px) {
+  .table-wrapper { overflow: visible; }
+  .day-card table { min-width: 0; } /* 關閉原本的 min-width */
+  .day-card thead { display: none; }
+  .day-card tbody tr {
+    display: block;
+    margin: 0 0 12px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+    overflow: hidden;
+  }
+  .day-card td {
+    display: block;
+    position: relative;
+    padding: 10px 12px 10px 96px; /* 內容向右縮，預留左側小標題區 */
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+  .day-card td::before {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    width: 72px;
+    font-weight: 700;
+    color: #555;
+    white-space: nowrap;
+    content: ""; /* 先給空字串，下面針對欄位填字 */
+  }
+  .day-card td:nth-child(1)::before { content: "時間"; }
+  .day-card td:nth-child(2)::before { content: "内容"; }
+  .day-card td:nth-child(3)::before { content: "交通"; }
+  .day-card td:nth-child(4)::before { content: "備考"; }
+}
+
+/* ===== 交通色（純標示） ===== */
+.transport { font-weight: 700; }
+.line-hsr { color: #e64a19; }
+.line-mrt { color: #512698; }
+.line-train { color: #1e90ff; }
+.line-bus { color: #00695c; }
+.line-flight { color: #8e44ad; }
+
+/* ===== 備考卡片 ===== */
+.note-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+  padding: 18px;
+}
+.note-card h3 {
+  margin-top: 0;
+  color: var(--brand);
+}
+
+/* ===== HERO 導覽提示列（粉色連結說明） ===== */
+.hero-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 64px;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: clamp(.72rem, 2.2vw, .95rem);
+  line-height: 1.4;
+  color: #fff;
+  background: rgba(0, 0, 0, .28);
+  border: 1px solid rgba(255, 255, 255, .4);
+  backdrop-filter: blur(4px)
+}
+.hero-hint .accent {
+  color: var(--accent);
+  font-weight: 800;
+}
+@media (max-width: 740px) {
+  .hero-hint { bottom: 66px; } /* 與你的 .hero-nav 保持間距 */
+}
+
+/* 讓提示視窗顯示效果確保 iPhone 不會遮擋 */
+#pageLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 9999; /* 確保覆蓋其他內容 */
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom) 16px;
+}
+/* 修改 loader-card */
+.loader-card {
+  max-width: 680px;
+  width: 90%;
+  max-height: 88vh;
+  overflow: hidden; /* ★ 變更：改為 hidden，我們要控制內部捲動 */
+  margin: 0 auto;
+  padding: 0; /* ★ 變更：padding 移到子元素 */
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, .35);
+  /* ★ 新增：Flex 佈局，讓按鈕可以固定底部 ★ */
+  display: flex;
+  flex-direction: column;
+}
+
+.loader-content {
+  overflow-y: auto; /* 讓這裡捲動 */
+  -webkit-overflow-scrolling: touch; /* iOS 順暢捲動 */
+  flex-grow: 1; /* 佔滿剩餘空間 */
+  padding: 18px 20px; /* 把 .loader-card 的 padding 移到這裡 */
+}
+
+.loader-actions {
+  flex-shrink: 0; /* 保持按鈕區域不被壓縮 */
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+/* 讓按鈕的字體大小固定並且可點擊 */
+.loader-btn {
+  font-size: 16px;
+  font-weight: 700; /* 加粗 */
+  line-height: 1.2;
+  padding: 12px 18px;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  /* ★ 新增：讓按鈕在深色背景中更明顯 ★ */
+  background: rgba(255, 255, 255, .15);
+  border: 1px solid rgba(255, 255, 255, .3);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.loader-btn:hover { background: rgba(255, 255, 255, .25); }
+.loader-spinner {
+  margin: 8px 0 0;
+  font-size: .95rem;
+  opacity: .9;
+}
+
+/* 動畫淡出 */
+.fade-out { animation: loaderFade .5s ease forwards; }
+@keyframes loaderFade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* 動畫偏好：使用者關閉動效時停用轉圈 */
+@media (prefers-reduced-motion: reduce) {
+  .fade-out { animation: none; }
+}
+
+/* 右上角重新開啟按鈕 */
+.help-reopen {
+  position: fixed;
+  top: 56px;
+  right: 14px;
+  z-index: 9999;
+  display: flex;
+  gap: 8px;
+}
+.help-btn {
+  border: 1px solid rgba(255, 255, 255, .6);
+  background: rgba(0, 0, 0, .45);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: .9rem;
+  backdrop-filter: blur(4px)
+}
+.help-btn:hover { background: rgba(255, 255, 255, .25); }
+
+/* ===== 自動日夜：統一用 CSS 變數切換 ===== */
+body.night {
+  --bg: #212121; /* 夜間底色 */
+  --text: #eee; /* 夜間文字 */
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== 夜間：卡片與表格、提示面板、按鈕 ===== */
+body.night .day-card,
+body.night .note-card,
+body.night #pageLoader .loader-card {
+  background: #2b2b2b;
+  color: #eee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .6);
+  border-color: #3a3a3a;
+}
+
+body.night .day-card h2 {
+  background: #0e4e45; /* 品牌綠加深一點，夜間舒服 */
+  color: #e9f6f4;
+}
+
+body.night .day-card th {
+  background: #3a3a3a;
+  color: #ddd;
+}
+/*
+  用 @media query 包起來，讓斑馬紋只在桌機版生效 
+*/
+@media (min-width: 741px) {
+  body.night .day-card tr:nth-child(even) { background: #2f2f2f; }
+}
+body.night .day-card td,
+body.night .day-card th {
+  border-color: #444; /* 若你之後加了邊線也能協調 */
+}
+
+/* 夜間：Hero 導覽 pill、語言切換、重新開啟按鈕 */
+body.night .hero-nav a,
+body.night .lang-switch,
+body.night .help-btn {
+  background: rgba(255, 255, 255, .08);
+  border-color: rgba(255, 255, 255, .45);
+  color: #fff;
+}
+body.night .hero-nav a:hover,
+body.night .help-btn:hover {
+  background: rgba(255, 255, 255, .18);
+}
+
+/* 夜間：載入遮罩底色減少刺眼 */
+body.night #pageLoader {
+  background: rgba(0, 0, 0, .75);
+}
+
+/* ★★★ 新增：夜間模式的交通顏色 ★★★ */
+body.night .line-mrt {
+  color: #8b5adb; /* 深紫 -> 亮紫 */
+}
+body.night .line-bus {
+  color: #1aad9b; /* 深綠 -> 亮綠 */
+}
+
+/* 夜間：修正手機 RWD 表格卡片的背景
+*/
+@media (max-width: 740px) {
+  body.night .day-card tbody tr {
+    background: transparent; /* 讓 tr 繼承 .day-card 的 #2b2b2b 背景色 */
+    border-color: #3a3a3a; /* 順便統一 RWD 卡片的邊框色 */
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="pageLoader" role="dialog" aria-live="polite" aria-label="ページの使い方">
+  <div class="loader-card" role="document">
+
+    <div class="loader-content">
+      <p class="loader-title" id="loader-title">使い方（まずご確認ください）</p>
+      <p class="loader-tip">1. <span class="loader-accent">ピンク色</span> の文字はリンクです。タップして各セクションへ移動できます。</p>
+      <p class="loader-tip">2. 上部のナビ（DAY1〜DAY4・備考）はボタンです。タップすると該当の位置へジャンプします。</p>
+      <p class="loader-tip">3. ページに入ったあとも、右上の <strong>「使い方を表示」</strong> ボタンからこの案内をもう一度ひらけます。</p>
+      <p class="loader-tip">4. 右上の「☀️/🌙」ボタンで、日中・夜間モードを手動で切り替えられます。</p>
+      <p class="loader-tip">5. If you need another language, tap the Translate button at the top right after entering the page.</p>
+      <p class="loader-tip">6. The page will automatically switch to dark mode based on the time of day (if no manual preference is set).</p>
+    </div>
+
+    <div class="loader-actions">
+      <button class="loader-btn" id="btnEnter" type="button" aria-label="ページに進む">ページに進む</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="lang-switch"><span>Language</span><div id="gTranslate"></div></div>
+
+<div class="help-reopen" aria-live="polite">
+  <button id="btnShowHelp" class="help-btn" type="button" aria-label="使い方を表示">使い方を表示</button>
+  <button id="btnToggleTheme" class="help-btn" type="button" aria-label="テーマを切り替え">🌙</button>
+</div>
+
+
+
+<script>
+// ===== 變數宣告 (Define Variables) =====
+const loaderBox = document.getElementById('pageLoader');
+const btnEnter = document.getElementById('btnEnter');
+const btnShow = document.getElementById('btnShowHelp');
+const btnToggleTheme = document.getElementById('btnToggleTheme');
+let autoCloseTimeout;
+
+// ===== 事件監聽 (Event Listeners) =====
+
+/**
+ * 強化事件監聽
+ * @param {Element} el - The element to attach the listener to.
+ * @param {string} evts - Space-separated event names (e.g., 'click touchstart').
+ * @param {Function} handler - The function to call.
+ */
+function safeOn(el, evts, handler) {
+  evts.split(' ').forEach(evt => {
+    // 使用 { passive: false } 允許 preventDefault
+    el?.addEventListener(evt, handler, false);
+  });
+}
+
+// 綁定「進入」按鈕
+safeOn(btnEnter, 'click touchstart', hideLoader);
+
+// 綁定「顯示說明」按鈕
+safeOn(btnShow, 'click touchstart', showLoader);
+
+// 綁定「切換主題」按鈕
+safeOn(btnToggleTheme, 'click touchstart', toggleTheme);
+
+// 綁定 ESC 鍵
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && loaderBox && loaderBox.style.display !== 'none') {
+    hideLoader(e); // 傳遞 e，雖然 hideLoader 目前用不到
+  }
+});
+
+
+// ===== 函數定義 (Function Definitions) =====
+
+/**
+ * 顯示載入面板 (Show Loader)
+ * @param {Event} [e] - The event object (optional).
+ */
+function showLoader(e) {
+  // ★★★ 修正點：防止幽靈點擊 ★★★
+  if (e && e.type === 'touchstart') {
+    e.preventDefault();
+  }
+  
+  if (!loaderBox) return;
+
+  loaderBox.style.display = 'flex';
+  loaderBox.style.opacity = '1';
+  loaderBox.style.visibility = 'visible';
+  loaderBox.classList.remove('fade-out');
+  loaderBox.setAttribute('aria-hidden', 'false');
+  setTimeout(() => btnEnter?.focus(), 0); // 確保焦點設置在按鈕
+
+  // 啟動 10 秒後自動關閉的計時器
+  clearTimeout(autoCloseTimeout);
+  autoCloseTimeout = setTimeout(hideLoader, 10000);
+}
+
+/**
+ * 隱藏載入面板 (Hide Loader)
+ * @param {Event} [e] - The event object (optional).
+ */
+function hideLoader(e) {
+  // ★★★ 修正點：防止幽靈點擊 ★★★
+  if (e && e.type === 'touchstart') {
+    e.preventDefault();
+  }
+  
+  if (!loaderBox) return;
+
+  loaderBox.classList.add('fade-out');
+  loaderBox.setAttribute('aria-hidden', 'true');
+  setTimeout(() => {
+    loaderBox.style.display = 'none';
+  }, 520);
+}
+
+// ===== 日夜模式邏輯 (Theme Logic) =====
+
+/**
+ * 更新主題按鈕圖示 (Update Theme Button Icon)
+ */
+function updateThemeButtonIcon() {
+  if (!btnToggleTheme) return;
+  const isNight = document.body.classList.contains('night');
+  if (isNight) {
+    btnToggleTheme.innerHTML = '☀️'; // 深色模式時，顯示太陽 (點了變白天)
+    btnToggleTheme.setAttribute('aria-label', 'ライトモードに切り替え');
+  } else {
+    btnToggleTheme.innerHTML = '🌙'; // 淺色模式時，顯示月亮 (點了變黑夜)
+    btnToggleTheme.setAttribute('aria-label', 'ダークモードに切り替え');
+  }
+}
+
+/**
+ * 切換主題 (Toggle Theme)
+ * @param {Event} [e] - The event object (optional).
+ */
+function toggleTheme(e) {
+  // ★★★ 修正點：防止幽靈點擊 ★★★
+  if (e && e.type === 'touchstart') {
+    e.preventDefault();
+  }
+  
+  // 檢查 body 現在是否有 .night
+  const isCurrentlyNight = document.body.classList.toggle('night');
+  
+  // 把使用者的選擇存到 localStorage
+  if (isCurrentlyNight) {
+    localStorage.setItem('theme-preference', 'dark');
+  } else {
+    localStorage.setItem('theme-preference', 'light');
+  }
+  
+  // 更新按鈕圖示
+  updateThemeButtonIcon();
+}
+
+/**
+ * 頁面載入時，初始化主題 (Initialize Theme)
+ */
+function initTheme() {
+  const savedPreference = localStorage.getItem('theme-preference');
+
+  if (savedPreference === 'dark') {
+    // 如果使用者手動選過「深色」
+    document.body.classList.add('night');
+  } else if (savedPreference === 'light') {
+    // 如果使用者手動選過「淺色」
+    document.body.classList.remove('night');
+  } else {
+    // 使用者沒選過，才啟用「自動」判斷
+    const hour = new Date().getHours(); // 0~23
+    const isAutoNight = (hour >= 18 || hour < 6);
+    document.body.classList.toggle('night', isAutoNight);
+  }
+  
+  // 根據最終結果，更新按鈕圖示
+  updateThemeButtonIcon();
+}
+
+// ===== Google 翻譯 (Google Translate) =====
+function initGTranslate() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'ja',
+    includedLanguages: 'ja,zh-TW,en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'gTranslate');
+}
+
+
+// ===== 腳本啟動 (Script Execution) =====
+
+// 1. 頁面一載入就執行「初始化主題」
+initTheme();
+
+// 2. 預設一進來就顯示「使用說明」
+// ★★★ 修正點：必須在 initTheme 之後呼叫，且不帶 'e' ★★★
+showLoader(); 
+
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=initGTranslate"></script>
+
+
+<section class="hero">
+  <img
+    src="https://plus.unsplash.com/premium_photo-1661951189203-12decb9d7f8e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2670"
+    alt="Taipei skyline night view"
+    fetchpriority="high"
+    decoding="async"
+    width="2670" height="1500"
+  />
+  
+  <h1>
+    <span class="date">2025/10/21–24</span>
+    <span class="trip">台湾 4日スケジュール</span>
+  </h1>
+
+  <nav class="hero-nav" aria-label="Page sections">
+    <a href="#day1">DAY1 台中</a>
+    <a href="#day2">DAY2 台北</a>
+    <a href="#day3">DAY3 平渓・九份</a>
+    <a href="#day4">DAY4 帰国</a>
+    <a href="#note">備考</a>
+  </nav>
+</section>
+
+<div class="container">
+
+  <section id="day1" class="day-card">
+    <div class="banner">
+      <img
+        src="https://images.pexels.com/photos/31094991/pexels-photo-31094991.jpeg"
+        alt="Taichung city scene"
+        loading="lazy"
+        decoding="async"
+        width="1600" height="1067"
+      >
+    </div>
+    <h2>Day 1　台北空港 到着 → 台北駅 → 台中へ（HSR）／ 夕食：宮原眼科上「醉月樓」（10/21 月）</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>時間</th><th>行程</th><th>交通</th><th>費用／備註</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>12:45</td>
+            <td>台北空港（桃園空港）・到着入国審査・両替・Wi-Fi …</td>
+            <td class="transport line-mrt">
+              <a href="https://www.taoyuan-airport.com/?lang=jp" target="_blank" rel="noopener">桃園国際空港</a> /<br>
+              <a href="https://www.tymetro.com.tw/tymetro-new/jp/index.php" target="_blank" rel="noopener">桃園メトロ空港線</a>
+            </td>
+            <td class="transport line-hsr">
+              12:45 着、フライト MM025<br>
+              台中駅まで約 35〜40 分
+            </td>
+          </tr>
+          <tr>
+            <td>午後</td>
+            <td>台北 → 台中</td>
+            <td class="transport line-hsr"><a href="https://jp.thsrc.com.tw/" target="_blank" rel="noopener">HSR（新幹線）</a></td>
+            <td> 約 1 時間かかる</td>
+          </tr>
+          <tr>
+            <td>18時</td>
+            <td>
+              台中着 → ホテルチェックイン<br>
+              夕食は 6 人で 
+              <a href="https://travel.taichung.gov.tw/ja/attractions/intro/1211" target="_blank" rel="noopener">宮原眼科</a> 上の
+              <a href="https://www.miyahara.com.tw/images/shopinfo/spic/20220620-%E6%96%B0%E9%86%89%E6%9C%88%E6%A8%93%E8%8F%9C%E5%96%AE.pdf" target="_blank" rel="noopener">「醉月樓」</a>
+            </td>
+            <td class="transport line-bus">タクシー / バス / 徒歩</td>
+            <td class="transport line-hsr">18 時予約予定</td>
+          </tr>
+          <tr>
+            <td>宿泊</td>
+            <td><a href="https://jp.trip.com/hotels/taichung-hotel-detail-67665877/norway-forest-travel-hotel-3-taichung" target="_blank" rel="noopener">Norway Forest Travel hotel 3 Taichung</a></td>
+            <td>—</td>
+            <td>電話：+886-4-22212288</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="day2" class="day-card">
+    <div class="banner">
+      <img
+        src="https://images.pexels.com/photos/19872831/pexels-photo-19872831.jpeg"
+        alt="Longshan Temple Taipei"
+        loading="lazy"
+        decoding="async"
+        width="1600" height="1067"
+        style="object-fit:cover;object-position:center bottom;"
+      >
+    </div>
+    <h2>Day 2　鹿港老街 観光 → 台北へ移動 → 龍山寺 参拝 → 夜市で夕食（10/22 火）</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>時間</th><th>行程</th><th>交通</th><th>費用／備註</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>午前〜14:00</td>
+            <td><a href="https://taipeinavi.jp/%E9%B9%BF%E6%B8%AF%E8%80%81%E8%A1%97/" target="_blank" rel="noopener">鹿港老街</a>を観光</td>
+            <td class="transport line-hsr">ヘンリー運転 🚗</td>
+            <td>台中から約 1.5 時間〜</td>
+          </tr>
+          <tr>
+            <td>午後</td>
+            <td>台中 → 台北（HSR）</td>
+            <td class="transport line-hsr"><a href="https://jp.thsrc.com.tw/" target="_blank" rel="noopener">HSR</a></td>
+            <td>約 1 時間</td>
+          </tr>
+          <tr>
+            <td>到着後</td>
+            <td><a href="https://taipeinavi.jp/%e5%8f%b0%e6%b9%be%E9%be%8d%E5%b1%b1%E5%af%ba/" target="_blank" rel="noopener">龍山寺</a>を参拝</td>
+            <td class="transport line-mrt">台北 MRT（板南線・龍山寺駅）</td>
+            <td><a href="https://m.metro.taipei/jp/" target="_blank" rel="noopener">台北 MRT（日本語）</a></td>
+          </tr>
+          <tr>
+            <td>夜</td>
+            <td>
+              夜市で夕食（候補）：<br>
+              ・<a href="https://jp.taiwan.net.tw/m1.aspx?id=415&sNo=0003016" target="_blank" rel="noopener">饒河街観光夜市</a><br>
+              ・<a href="https://jp.taiwan.net.tw/m1.aspx?id=154&sNo=0003090" target="_blank" rel="noopener">士林夜市</a>
+            </td>
+            <td class="transport line-mrt">MRT / 徒歩</td>
+            <td>夜市は混雑</td>
+          </tr>
+          <tr>
+            <td>宿泊</td>
+            <td><a href="https://jp.trip.com/hotels/taipei-hotel-detail-901183/yomi-hotel" target="_blank" rel="noopener">優美ホテル（YOMI Hotel）</a></td>
+            <td>—</td>
+            <td>電話：+886-2-2525-5678</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="day3" class="day-card">
+    <div class="banner">
+      <img
+        src="https://images.pexels.com/photos/27979604/pexels-photo-27979604.jpeg"
+        alt="Jiufen old street night"
+        loading="lazy"
+        decoding="async"
+        width="1600" height="1067"
+      >
+    </div>
+    <h2>Day 3　平渓・十分で天燈上げ → 侯硐（猫村?）→ 九份 観光（10/23 水）</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>時間</th><th>行程</th><th>交通</th><th>費用／備註</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>午前〜昼</td>
+            <td><a href="https://taipeinavi.jp/%e5%8d%81%E5%88%86%e8%a6%b3%E5%85%89/" target="_blank" rel="noopener">十分</a>で天燈上げ体験</td>
+            <td class="transport line-train">台鉄 + バス</td>
+            <td><a href="https://www.railway.gov.tw/tra-tip-web/tip/tip009/tip911/newsDtl?newsNo=8ae4cac29a31668b019a37eae58c098a" target="_blank" rel="noopener">鉄道状況</a>確認</td>
+          </tr>
+          <tr>
+            <td>午後〜</td>
+            <td><a href="https://taipeinavi.jp/%e5%b9%b3%E6%b8%93%E7%b7%9a-%e6%b2%bf%e7%b7%9a%E8%a6%b3%E5%85%89/#%E5%B9%B3%E6%B8%93%E7%B7%9A%E6%B2%BF%E7%B7%9A%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%EF%BD%9C%E7%8C%B4%E7%A1%90" target="_blank" rel="noopener">侯硐（猫村）</a></td>
+            <td class="transport line-train">台鉄 + バス</td>
+            <td>猫に人の食べ物は与えるのは禁止</td>
+          </tr>
+          <tr>
+            <td>午後〜夕方</td>
+            <td><a href="https://taipeinavi.jp/%e4%b9%9d%e4%bb%bd%e3%82%a2%E3%82%AF%E3%82%bb%E3%82%b9/" target="_blank" rel="noopener">九份観光</a>（老街・茶屋）</td>
+            <td class="transport line-bus">バス / タクシー</td>
+            <td>夕暮れ時が人気</td>
+          </tr>
+          <tr>
+            <td>夜</td>
+            <td>台北へ戻って夕食（未定）</td>
+            <td class="transport line-bus">MRT / タクシー</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>宿泊</td>
+            <td><a href="https://jp.trip.com/hotels/taipei-hotel-detail-901183/yomi-hotel" target="_blank" rel="noopener">優美ホテル（YOMI Hotel）</a></td>
+            <td>—</td>
+            <td>電話：+886-2-2525-5678</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="day4" class="day-card">
+    <div class="banner">
+      <img
+        src="https://images.pexels.com/photos/7298042/pexels-photo-7298042.jpeg"
+        alt="Taipei breakfast shop"
+        loading="lazy"
+        decoding="async"
+        width="1600" height="1067"
+      >
+    </div>
+    <h2>Day 4　朝食：阜杭豆漿 → 荷物整理 → 空港へ → 日本へ帰国（10/24 木）</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>時間</th><th>行程</th><th>交通</th><th>費用／備註</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>朝</td>
+            <td><a href="https://www.taipeinavi.com/food/28/" target="_blank" rel="noopener">阜杭豆漿</a>で台湾式朝ごはん</td>
+            <td class="transport line-mrt">MRT</td>
+            <td>5:30 開始（行列あり）</td>
+          </tr>
+          <tr>
+            <td>午前〜昼</td>
+            <td>ホテルに戻り荷物整理 → チェックアウト</td>
+            <td>—</td>
+            <td>台北駅 → 桃園空港：空港 MRT 約 35〜40 分</td>
+          </tr>
+          <tr>
+            <td>帰国</td>
+            <td>空港へ移動 → 日本へ帰国 ✈️</td>
+            <td class="transport line-flight"><a href="https.tymetro.com.tw/tymetro-new/jp/_pages/travel-guide/timetable-search.php" target="_blank" rel="noopener">桃園メトロ空港線</a></td>
+            <td>IT212（14:40 発）予定</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="note" class="note-card">
+    <h3>備考・連絡先</h3>
+    <ul>
+      <li><a href="https://jp.trip.com/hotels/taichung-hotel-detail-67665877/norway-forest-travel-hotel-3-taichung" target="_blank" rel="noopener"><strong>Norway Forest Travel hotel 3 Taichung</strong></a>　TEL：+886-4-22212288</li>
+      <li><a href="https://jp.trip.com/hotels/taipei-hotel-detail-901183/yomi-hotel" target="_blank" rel="noopener"><strong>優美ホテル（YOMI Hotel）</strong></a>　TEL：+886-2-25255678</li>
+      <li><strong>観光情報（日本語）</strong>：
+        <a href="https://www.travel.taipei/ja" target="_blank" rel="noopener">Travel Taipei</a> ／
+        <a href="https://travel.taichung.gov.tw/ja" target="_blank" rel="noopener">Taichung Travel</a> ／
+        夜市：<a href="https://jp.taiwan.net.tw/m1.aspx?id=415&sNo=0003016" target="_blank" rel="noopener">饒河</a>・
+        <a href="https://jp.taiwan.net.tw/m1.aspx?id=154&sNo=0003090" target="_blank" rel="noopener">士林</a>
+      </li>
+      <li><strong>移動 Tips</strong>：EasyCard／配車アプリ（Uber・台灣大車隊）</li>
+      <li><strong>ヘンリー連絡先：</strong>+886-9-6666-3922</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>
